@@ -24,6 +24,16 @@
 /* USER CODE BEGIN Includes */
 #include "robot.h"
 #include  "Key.h"
+#include "myUsart.h"
+#include "stm32f1xx_hal.h"
+#include "stdio.h"
+#include "stdarg.h"
+#include "myUsart.h"
+#include <stm32f1xx_hal_usart.h>
+#include "stm32f1xx_it.h"
+#include "stm32f1xx_hal.h"
+#include <string.h>
+#include <robot.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,6 +54,9 @@
 /* Private variables ---------------------------------------------------------*/
 TIM_HandleTypeDef htim4;
 
+UART_HandleTypeDef huart1;
+UART_HandleTypeDef huart3;
+
 osThreadId defaultTaskHandle;
 osThreadId robot_moveHandle;
 osThreadId HC_05Handle;
@@ -55,6 +68,8 @@ osThreadId HC_05Handle;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM4_Init(void);
+static void MX_USART3_UART_Init(void);
+static void MX_USART1_UART_Init(void);
 void StartDefaultTask(void const * argument);
 void robot_move_task(void const * argument);
 void HC_05_Task(void const * argument);
@@ -98,8 +113,10 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM4_Init();
+  MX_USART3_UART_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  myusart_init();
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -252,6 +269,72 @@ static void MX_TIM4_Init(void)
 }
 
 /**
+  * @brief USART1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART1_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
+
+}
+
+/**
+  * @brief USART3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART3_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART3_Init 0 */
+
+  /* USER CODE END USART3_Init 0 */
+
+  /* USER CODE BEGIN USART3_Init 1 */
+
+  /* USER CODE END USART3_Init 1 */
+  huart3.Instance = USART3;
+  huart3.Init.BaudRate = 115200;
+  huart3.Init.WordLength = UART_WORDLENGTH_8B;
+  huart3.Init.StopBits = UART_STOPBITS_1;
+  huart3.Init.Parity = UART_PARITY_NONE;
+  huart3.Init.Mode = UART_MODE_TX_RX;
+  huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart3.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART3_Init 2 */
+
+  /* USER CODE END USART3_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -264,8 +347,8 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin : PA15 */
   GPIO_InitStruct.Pin = GPIO_PIN_15;
@@ -310,12 +393,22 @@ void robot_move_task(void const * argument)
 {
   /* USER CODE BEGIN robot_move_task */
   robot_Init();
+  int Key_Value = 0;
+
   /* Infinite loop */
   for(;;)
   {    
-    
-    robot_Run();
-    osDelay(1);
+
+    Key_Value = Key_GetNum();
+    if(Key_Value == 1)
+    {
+   
+      makerobo_run(70,2000);//?‰?è??1S
+    //  s_printf("Key_GetNum() == 1\r\n");
+     Key_Value=0;
+     
+   }
+    osDelay(10);
   }
   /* USER CODE END robot_move_task */
 }
@@ -332,8 +425,10 @@ void HC_05_Task(void const * argument)
   /* USER CODE BEGIN HC_05_Task */
   /* Infinite loop */
   for(;;)
-  {
-    osDelay(1);
+  { 
+    
+    HC_05_RUN();
+    osDelay(10);
   }
   /* USER CODE END HC_05_Task */
 }

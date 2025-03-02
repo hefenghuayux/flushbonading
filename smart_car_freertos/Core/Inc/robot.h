@@ -2,7 +2,7 @@
 #define __ROBOT_H
 
 void robot_Init(void);
-void robot_speed(uint8_t left1_speed,uint8_t left2_speed,uint8_t right1_speed,uint8_t right2_speed);
+void robot_speed(uint8_t left1_speed, uint8_t left2_speed, uint8_t right1_speed, uint8_t right2_speed, uint8_t time);
 // 基本运动
 void makerobo_run(uint8_t speed,uint16_t time); // 机器人前进
 void makerobo_brake(uint16_t time);             // 机器人停止

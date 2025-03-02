@@ -26,3 +26,4 @@ smart_car_freertos\stm32f1xx_hal_gpio.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm
 smart_car_freertos\stm32f1xx_hal_gpio.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 smart_car_freertos\stm32f1xx_hal_gpio.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 smart_car_freertos\stm32f1xx_hal_gpio.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+smart_car_freertos\stm32f1xx_hal_gpio.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
