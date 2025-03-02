@@ -1,0 +1,24 @@
+{
+    "files.associations": {
+        "stdarg.h": "c",
+        "stm32f1xx_hal.h": "c",
+        "main.h": "c",
+        "cmsis_os.h": "c",
+        "robot.h": "c",
+        "atomic": "c",
+        "compare": "c",
+        "cstddef": "c",
+        "limits": "c",
+        "memory": "c",
+        "type_traits": "c",
+        "xmemory": "c",
+        "xstring": "c",
+        "xutility": "c",
+        "stm32f1xx_it.h": "c",
+        "myusart.h": "c",
+        "stdio.h": "c",
+        "key.h": "c",
+        "stm32f1xx_hal_usart.h": "c",
+        "string.h": "c"
+    }
+}
