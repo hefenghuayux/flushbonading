@@ -4,7 +4,6 @@
 #include "Key.h"
 #include "cmsis_os.h"
 
-
 uint8_t Key_GetNum(void)
 {
     uint8_t KeyNum = 0;

@@ -402,6 +402,11 @@
               <FilePath>..\Core\Src\robot.c</FilePath>
             </File>
             <File>
+              <FileName>cJSON.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\cJSON.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/main.c</FilePath>

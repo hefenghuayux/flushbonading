@@ -394,7 +394,7 @@ void robot_move_task(void const * argument)
   /* USER CODE BEGIN robot_move_task */
   robot_Init();
   int Key_Value = 0;
-
+  makerobo_run(70, 5000);
   /* Infinite loop */
   for(;;)
   {    
@@ -403,8 +403,8 @@ void robot_move_task(void const * argument)
     if(Key_Value == 1)
     {
    
-      makerobo_run(70,2000);//?‰?è??1S
-    //  s_printf("Key_GetNum() == 1\r\n");
+      makerobo_run(70,2000);//?�??è??1S
+     s_printf("Key_GetNum() == 1\r\n");
      Key_Value=0;
      
    }

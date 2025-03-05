@@ -1,0 +1,10 @@
+smart_car_freertos\cjson.o: ..\Core\Src\cJSON.c
+smart_car_freertos\cjson.o: E:\Keil32\ARM\ARMCC\Bin\..\include\string.h
+smart_car_freertos\cjson.o: E:\Keil32\ARM\ARMCC\Bin\..\include\stdio.h
+smart_car_freertos\cjson.o: E:\Keil32\ARM\ARMCC\Bin\..\include\math.h
+smart_car_freertos\cjson.o: E:\Keil32\ARM\ARMCC\Bin\..\include\stdlib.h
+smart_car_freertos\cjson.o: E:\Keil32\ARM\ARMCC\Bin\..\include\float.h
+smart_car_freertos\cjson.o: E:\Keil32\ARM\ARMCC\Bin\..\include\limits.h
+smart_car_freertos\cjson.o: E:\Keil32\ARM\ARMCC\Bin\..\include\ctype.h
+smart_car_freertos\cjson.o: ../Core/Inc/cJSON.h
+smart_car_freertos\cjson.o: E:\Keil32\ARM\ARMCC\Bin\..\include\stddef.h

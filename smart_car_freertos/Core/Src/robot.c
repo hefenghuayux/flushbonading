@@ -25,10 +25,7 @@ void robot_speed(uint8_t left1_speed, uint8_t left2_speed, uint8_t right1_speed,
     uint8_t left1_current_speed = 0, left2_current_speed = 0, right1_current_speed = 0, right2_current_speed = 0;
     uint8_t left1_target_speed = left1_speed, left2_target_speed = left2_speed, right1_target_speed = right1_speed, right2_target_speed = right2_speed;
     
-    uint8_t left1_increment = (left1_target_speed > left1_current_speed) ? 1 : -1;
-    uint8_t left2_increment = (left2_target_speed > left2_current_speed) ? 1 : -1;
-    uint8_t right1_increment = (right1_target_speed > right1_current_speed) ? 1 : -1;
-    uint8_t right2_increment = (right2_target_speed > right2_current_speed) ? 1 : -1;
+
 
     // 加速过程
     for (uint16_t i = 0; i < acceleration_time; i++) {

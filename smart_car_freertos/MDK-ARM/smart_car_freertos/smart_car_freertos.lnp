@@ -3,6 +3,7 @@
 "smart_car_freertos\key.o"
 "smart_car_freertos\myusart.o"
 "smart_car_freertos\robot.o"
+"smart_car_freertos\cjson.o"
 "smart_car_freertos\main.o"
 "smart_car_freertos\freertos.o"
 "smart_car_freertos\stm32f1xx_it.o"
