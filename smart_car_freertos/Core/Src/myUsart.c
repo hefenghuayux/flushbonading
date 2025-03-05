@@ -1,16 +1,5 @@
 #include "myUsart.h"
-#include "cJSON.h"
-#include "FreeRTOS.h"
-#include "cmsis_os.h"
-#include "main.h"
-#include "stdarg.h"
-#include "stdio.h"
-#include "stm32f1xx_hal.h"
-#include "stm32f1xx_it.h"
-#include "task.h"
-#include <robot.h>
-#include <stm32f1xx_hal_usart.h>
-#include <string.h>
+
 cJSON *cJsonData = NULL;
 cJSON *cJsonVlaue = NULL;
 float p = 0.0, i = 0.0, d = 0.0, a = 0.0;
@@ -91,11 +80,9 @@ void HC_05_RUN(void) {
   // 蓝牙的串口接发数据
 
   if (Serial_RxFlag3 == 1) {
-    // char  data[100];
-    // for(int i=1;i<100;i++){
-    //     if(Serial_RxPacket3[i] == '#')break;
-    //     data[i]=Serial_RxPacket3[i];}
-    // cJsonData = cJSON_Parse((const char *)data);
+
+    
+    // cJsonData = cJSON_Parse((const char *)Serial_RxPacket3);
    
 
     // if (cJSON_GetObjectItem(cJsonData, "p") != NULL)
@@ -129,11 +116,12 @@ void HC_05_RUN(void) {
     //   cJSON_Delete(cJsonData); // 释放空间、但是不能删除cJsonvlaue不然会 出现异常错误
     // }
 
-    // s_printf("P:%.3f I:%.3f D:%.3f A:%.3f\r\n", p, i, d, a);
+    s_printf("P:%.3f I:%.3f D:%.3f A:%.3f\r\n", p, i, d, a);
 
-    char *x = "get char in HC_05_RUN\r\n";
+    // char *x = "get char in HC_05_RUN\r\n";
 
-    hhSerialSendString(x, &huart3);
+    hhSerialSendString(Serial_RxPacket3, &huart3);
+
     if (strcmp(Serial_RxPacket3, "run") == 0) {
       makerobo_run(70, 5000);
     }
@@ -206,9 +194,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     HAL_UART_Receive_IT(&huart1, &ByteRecv1, 1);
   }
 }
-// void HC_05_Receive(void) {
 
-// }
 void myusart_init(void) {
   HAL_UART_Receive_IT(&huart1, &ByteRecv1, 1);
   HAL_UART_Receive_IT(&huart3, &ByteRecv3, 1);

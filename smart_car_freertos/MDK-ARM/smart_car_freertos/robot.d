@@ -45,3 +45,11 @@ smart_car_freertos\robot.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/e
 smart_car_freertos\robot.o: ../Core/Inc/Key.h
 smart_car_freertos\robot.o: ../Core/Inc/robot.h
 smart_car_freertos\robot.o: ../Core/Inc/myUsart.h
+smart_car_freertos\robot.o: ../Core/Inc/cJSON.h
+smart_car_freertos\robot.o: E:\Keil32\ARM\ARMCC\Bin\..\include\stdlib.h
+smart_car_freertos\robot.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+smart_car_freertos\robot.o: E:\Keil32\ARM\ARMCC\Bin\..\include\stdarg.h
+smart_car_freertos\robot.o: E:\Keil32\ARM\ARMCC\Bin\..\include\stdio.h
+smart_car_freertos\robot.o: ../Core/Inc/stm32f1xx_it.h
+smart_car_freertos\robot.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_usart.h
+smart_car_freertos\robot.o: E:\Keil32\ARM\ARMCC\Bin\..\include\string.h

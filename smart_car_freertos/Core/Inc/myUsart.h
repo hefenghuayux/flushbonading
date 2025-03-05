@@ -1,6 +1,17 @@
 #ifndef __MYUSART_H
 #define __MYUSART_H
-
+#include "cJSON.h"
+#include "FreeRTOS.h"
+#include "cmsis_os.h"
+#include "main.h"
+#include "stdarg.h"
+#include "stdio.h"
+#include "stm32f1xx_hal.h"
+#include "stm32f1xx_it.h"
+#include "task.h"
+#include <robot.h>
+#include <stm32f1xx_hal_usart.h>
+#include <string.h>
 
 
 void myusart_init(void);
