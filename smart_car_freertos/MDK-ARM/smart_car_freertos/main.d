@@ -53,3 +53,7 @@ smart_car_freertos\main.o: E:\Keil32\ARM\ARMCC\Bin\..\include\stdio.h
 smart_car_freertos\main.o: ../Core/Inc/stm32f1xx_it.h
 smart_car_freertos\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_usart.h
 smart_car_freertos\main.o: E:\Keil32\ARM\ARMCC\Bin\..\include\string.h
+smart_car_freertos\main.o: ../Core/Inc/ml_mpu6050.h
+smart_car_freertos\main.o: ../Core/Inc/ml_i2c.h
+smart_car_freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+smart_car_freertos\main.o: E:\Keil32\ARM\ARMCC\Bin\..\include\math.h

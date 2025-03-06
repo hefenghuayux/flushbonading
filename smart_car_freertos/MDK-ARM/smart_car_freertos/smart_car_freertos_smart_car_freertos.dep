@@ -1,5 +1,5 @@
 Dependencies for Project 'smart_car_freertos', Target 'smart_car_freertos': (DO NOT MODIFY !)
-F (startup_stm32f103xb.s)(0x67C92AED)(--cpu Cortex-M3 -g --apcs=interwork -I ../Core/Inc-I.\RTE\_smart_car_freertos-IE:\Keil32\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IE:\Keil32\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list startup_stm32f103xb.lst --xref -o smart_car_freertos\startup_stm32f103xb.o --depend smart_car_freertos\startup_stm32f103xb.d)
+F (startup_stm32f103xb.s)(0x67C95B05)(--cpu Cortex-M3 -g --apcs=interwork -I ../Core/Inc-I.\RTE\_smart_car_freertos-IE:\Keil32\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IE:\Keil32\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list startup_stm32f103xb.lst --xref -o smart_car_freertos\startup_stm32f103xb.o --depend smart_car_freertos\startup_stm32f103xb.d)
 F (..\Core\Src\Key.c)(0x67C92AED)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_smart_car_freertos-IE:\Keil32\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IE:\Keil32\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o smart_car_freertos\key.o --omf_browse smart_car_freertos\key.crf --depend smart_car_freertos\key.d)
 I (../Core/Inc/main.h)(0x67B70D48)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x670B7FE9)
@@ -159,7 +159,107 @@ I (E:\Keil32\ARM\ARMCC\include\limits.h)(0x588B8344)
 I (E:\Keil32\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (../Core/Inc/cJSON.h)(0x67C92AED)
 I (E:\Keil32\ARM\ARMCC\include\stddef.h)(0x588B8344)
-F (../Core/Src/main.c)(0x67C92AED)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_smart_car_freertos-IE:\Keil32\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IE:\Keil32\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o smart_car_freertos\main.o --omf_browse smart_car_freertos\main.crf --depend smart_car_freertos\main.d)
+F (..\Core\Src\ml_i2c.c)(0x67C95EB8)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_smart_car_freertos-IE:\Keil32\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IE:\Keil32\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o smart_car_freertos\ml_i2c.o --omf_browse smart_car_freertos\ml_i2c.crf --depend smart_car_freertos\ml_i2c.d)
+I (../Core/Inc/ml_i2c.h)(0x67C95A16)
+I (../Core/Inc/main.h)(0x67B70D48)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x670B7FE9)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x67B9D79A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x670B7FE9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x670B7FE9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x670B7FE9)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x670B7FE1)
+I (E:\Keil32\ARM\ARMCC\include\stdint.h)(0x588B8344)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x670B7FE1)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x670B7FE1)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x670B7FE1)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x670B7FE9)
+I (E:\Keil32\ARM\ARMCC\include\stddef.h)(0x588B8344)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x670B7FE9)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67B70D47)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x670B7FE9)
+I (../Core/Inc/stm32f1xx_it.h)(0x67B9E09D)
+F (..\Core\Src\ml_mpu6050.c)(0x67C95E39)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_smart_car_freertos-IE:\Keil32\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IE:\Keil32\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o smart_car_freertos\ml_mpu6050.o --omf_browse smart_car_freertos\ml_mpu6050.crf --depend smart_car_freertos\ml_mpu6050.d)
+I (../Core/Inc/ml_mpu6050.h)(0x67C95268)
+I (E:\Keil32\ARM\ARMCC\include\stdint.h)(0x588B8344)
+I (../Core/Inc/ml_i2c.h)(0x67C95A16)
+I (../Core/Inc/main.h)(0x67B70D48)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x670B7FE9)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x67B9D79A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x670B7FE9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x670B7FE9)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x670B7FE9)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x670B7FE1)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x670B7FE1)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x670B7FE1)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x670B7FE1)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x670B7FE9)
+I (E:\Keil32\ARM\ARMCC\include\stddef.h)(0x588B8344)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x670B7FE9)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x670B7FE9)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67B70D47)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x670B7FE9)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x670B7FE9)
+I (../Core/Inc/stm32f1xx_it.h)(0x67B9E09D)
+I (E:\Keil32\ARM\ARMCC\include\math.h)(0x588B8344)
+I (../Core/Inc/myUsart.h)(0x67C92AED)
+I (../Core/Inc/cJSON.h)(0x67C92AED)
+I (E:\Keil32\ARM\ARMCC\include\stdlib.h)(0x588B8344)
+I (E:\Keil32\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (E:\Keil32\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../Core/Inc/robot.h)(0x67C40F2D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_usart.h)(0x670B7FE9)
+I (E:\Keil32\ARM\ARMCC\include\string.h)(0x588B8344)
+F (../Core/Src/main.c)(0x67C95EE6)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_smart_car_freertos-IE:\Keil32\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IE:\Keil32\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o smart_car_freertos\main.o --omf_browse smart_car_freertos\main.crf --depend smart_car_freertos\main.d)
 I (../Core/Inc/main.h)(0x67B70D48)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x670B7FE9)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x67B9D79A)
@@ -212,6 +312,9 @@ I (E:\Keil32\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (../Core/Inc/stm32f1xx_it.h)(0x67B9E09D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_usart.h)(0x670B7FE9)
 I (E:\Keil32\ARM\ARMCC\include\string.h)(0x588B8344)
+I (../Core/Inc/ml_mpu6050.h)(0x67C95268)
+I (../Core/Inc/ml_i2c.h)(0x67C95A16)
+I (E:\Keil32\ARM\ARMCC\include\math.h)(0x588B8344)
 F (../Core/Src/freertos.c)(0x67B70D47)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_smart_car_freertos-IE:\Keil32\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IE:\Keil32\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o smart_car_freertos\freertos.o --omf_browse smart_car_freertos\freertos.crf --depend smart_car_freertos\freertos.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x670B7FE9)
 I (E:\Keil32\ARM\ARMCC\include\stddef.h)(0x588B8344)

@@ -34,6 +34,9 @@
 #include "stm32f1xx_hal.h"
 #include <string.h>
 #include <robot.h>
+#include <ml_mpu6050.h>
+#include <ml_i2c.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -60,6 +63,7 @@ UART_HandleTypeDef huart3;
 osThreadId defaultTaskHandle;
 osThreadId robot_moveHandle;
 osThreadId HC_05Handle;
+osThreadId MPU6050Handle;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -73,6 +77,7 @@ static void MX_USART1_UART_Init(void);
 void StartDefaultTask(void const * argument);
 void robot_move_task(void const * argument);
 void HC_05_Task(void const * argument);
+void MPU6050_task(void const * argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -117,6 +122,8 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   myusart_init();
+  I2C_Init();
+  MPU6050_Init();
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -147,6 +154,10 @@ int main(void)
   /* definition and creation of HC_05 */
   osThreadDef(HC_05, HC_05_Task, osPriorityNormal, 0, 128);
   HC_05Handle = osThreadCreate(osThread(HC_05), NULL);
+
+  /* definition and creation of MPU6050 */
+  osThreadDef(MPU6050, MPU6050_task, osPriorityIdle, 0, 128);
+  MPU6050Handle = osThreadCreate(osThread(MPU6050), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -350,11 +361,27 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3|GPIO_PIN_4, GPIO_PIN_RESET);
+
   /*Configure GPIO pin : PA15 */
   GPIO_InitStruct.Pin = GPIO_PIN_15;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PB3 PB4 */
+  GPIO_InitStruct.Pin = GPIO_PIN_3|GPIO_PIN_4;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PB5 */
+  GPIO_InitStruct.Pin = GPIO_PIN_5;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
@@ -431,6 +458,27 @@ void HC_05_Task(void const * argument)
     osDelay(10);
   }
   /* USER CODE END HC_05_Task */
+}
+
+/* USER CODE BEGIN Header_MPU6050_task */
+/**
+* @brief Function implementing the MPU6050 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_MPU6050_task */
+void MPU6050_task(void const * argument)
+{
+  /* USER CODE BEGIN MPU6050_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    MPU6050_GetData();
+    s_printf("ax:%d,ay:%d,az:%d\r\n",ax,ay,az);
+    s_printf("gx:%d,gy:%d,gz:%d\r\n",gx, gy, gz);
+    osDelay(1000);
+  }
+  /* USER CODE END MPU6050_task */
 }
 
 /**
