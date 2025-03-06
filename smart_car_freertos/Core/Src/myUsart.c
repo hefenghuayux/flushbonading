@@ -1,8 +1,6 @@
 #include "myUsart.h"
 
-cJSON *cJsonData = NULL;
-cJSON *cJsonVlaue = NULL;
-float p = 0.0, i = 0.0, d = 0.0, a = 0.0;
+
 char Serial_RxPacket1[100]; // 定义接收数据包数组，串口1
 char Serial_RxPacket3[100]; // 定义接收数据包数组，串口3
 uint8_t Serial_RxFlag1;     // 串口1接收数据包标志位
@@ -63,7 +61,9 @@ uint8_t Serial_GetRxFlag3(void) {
   }
   return 0;
 }
-
+cJSON *cJsonData = NULL;
+cJSON *cJsonVlaue = NULL;
+float p = 0.0, i = 0.0, d = 0.0, a = 0.0;
 void HC_05_RUN(void) {
   // USB转TTL的串口接发数据
   //  if (Serial_RxFlag1 == 1) {
@@ -82,42 +82,58 @@ void HC_05_RUN(void) {
   if (Serial_RxFlag3 == 1) {
 
     
-    // cJsonData = cJSON_Parse((const char *)Serial_RxPacket3);
+    cJsonData = cJSON_Parse((const char *)Serial_RxPacket3);
    
+    if (cJsonData == NULL) {
+      // 解析失败，获取错误位置
+      const char *error_ptr = cJSON_GetErrorPtr();
+      if (error_ptr != NULL) {
+          s_printf("JSON解析失败,错误位置:%s\r\n", error_ptr);
+      } else {
+          s_printf("未能获取错误位置\r\n");
+      }
+      
+  }
+    if (cJsonData != NULL&&cJSON_GetObjectItem(cJsonData, "p") != NULL)
 
-    // if (cJSON_GetObjectItem(cJsonData, "p") != NULL)
+    {
+      cJsonVlaue = cJSON_GetObjectItem(cJsonData, "p");
+      p = cJsonVlaue->valuedouble;
+    }
+    else s_printf("没有p\r\n");
 
-    // {
-    //   cJsonVlaue = cJSON_GetObjectItem(cJsonData, "p");
-    //   p = cJsonVlaue->valuedouble;
-    // }
 
-    // if (cJSON_GetObjectItem(cJsonData, "i") != NULL)
+    if (cJsonData != NULL&&cJSON_GetObjectItem(cJsonData, "i") != NULL)
 
-    // {
-    //   cJsonVlaue = cJSON_GetObjectItem(cJsonData, "i");
-    //   i = cJsonVlaue->valuedouble;
-    // }
+    {
+      cJsonVlaue = cJSON_GetObjectItem(cJsonData, "i");
+      i = cJsonVlaue->valuedouble;
+    }
+    else s_printf("没有i\r\n");
 
-    // if (cJSON_GetObjectItem(cJsonData, "d") != NULL)
+    if (cJsonData != NULL&&cJSON_GetObjectItem(cJsonData, "d") != NULL)
 
-    // {
-    //   cJsonVlaue = cJSON_GetObjectItem (cJsonData, "d");
-    //   d = cJsonVlaue->valuedouble;
-    // }
-    // if (cJSON_GetObjectItem (cJsonData, "a") != NULL)
+    {
+      cJsonVlaue = cJSON_GetObjectItem(cJsonData, "d");
+      d = cJsonVlaue->valuedouble;
+    }
+    else s_printf("没有d\r\n");
+    if (cJsonData != NULL&&cJSON_GetObjectItem(cJsonData, "a") != NULL)
 
-    // {
-    //   cJsonVlaue = cJSON_GetObjectItem (cJsonData, "a");
-    //   a = cJsonVlaue->valuedouble;
-    // }
+    {
+      cJsonVlaue = cJSON_GetObjectItem(cJsonData, "a");
+      a = cJsonVlaue->valuedouble;
+    }
+    else s_printf("没有a\r\n");
 
-    // if (cJsonData != NULL) {
-    //   cJSON_Delete(cJsonData); // 释放空间、但是不能删除cJsonvlaue不然会 出现异常错误
-    // }
+    if (cJsonData != NULL) {
+      cJSON_Delete(cJsonData); // 释放空间、但是不能删除cJsonvlaue不然会 出现异常错误
+    }
 
-    s_printf("P:%.3f I:%.3f D:%.3f A:%.3f\r\n", p, i, d, a);
-
+    s_printf("P:%.1f\r\n", p);
+    s_printf("I:%.1f\r\n", i);
+    s_printf("D:%.1f\r\n", d);
+    s_printf("A:%.1f\r\n", a);
     // char *x = "get char in HC_05_RUN\r\n";
 
     hhSerialSendString(Serial_RxPacket3, &huart3);
